@@ -77,7 +77,6 @@ Password SSH logins are rejected, so only the key works:
 - **Port 53 conflict.** Pi-hole will not start while Ubuntu's own resolver holds port 53. The drop-in file above turns off its stub listener, and the `resolv.conf` link keeps the VM able to look up names afterward.
 - **A broken Unbound config from an earlier build.** The config I first saved had a malformed `access-control` line with no action, and Unbound listened on every interface. I rebuilt it to listen only on `127.0.0.1` and checked it with `unbound-checkconf` before restarting.
 - **Shared network mode.** The VM was unreachable from other devices until I switched UTM to Bridged.
-- **A rebuild to start clean.** I rebuilt the VM from scratch with a neutral username and hostname, keeping only the config files and notes from the old one.
 
 ## What is not in this repo
 

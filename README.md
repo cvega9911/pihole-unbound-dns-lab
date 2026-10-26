@@ -68,6 +68,14 @@ With a phone's Wi-Fi DNS set to the VM, the dashboard fills in with queries and 
 
 ![Pi-hole dashboard showing queries and blocked queries from a phone](docs/images/04-pihole-dashboard.png)
 
+Listening ports on the VM: Unbound is bound to loopback only (127.0.0.1:5335), and Pi-hole (`pihole-FTL`) holds port 53:
+
+```
+sudo ss -tulpn | grep -E ':(53|5335)\b'
+```
+
+![ss output showing unbound on 127.0.0.1:5335 and pihole-FTL on port 53](docs/images/05-listening-ports.png)
+
 Password SSH logins are rejected, so only the key works:
 
 ![ssh with the key disabled returning Permission denied (publickey)](docs/images/02-ssh-password-login-disabled.png)

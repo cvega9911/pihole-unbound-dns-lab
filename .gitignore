@@ -1,0 +1,4 @@
+# Real secrets and Pi-hole's own data (password hash, query history)
+.env
+etc-pihole/
+*.bak
